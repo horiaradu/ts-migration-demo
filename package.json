@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "Demo project for native TypeScript execution migration talk",
     "main": "dist/index.js",
+    "type": "module",
     "scripts": {
         "build": "tsc",
         "start": "node src/index.ts",
