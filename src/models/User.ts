@@ -17,7 +17,7 @@ export class User extends Model<
     declare id: CreationOptional<number>;
     declare name: string;
     declare email: string;
-    declare role: Role;
+    declare role: CreationOptional<Role>;
     declare createdAt: CreationOptional<Date>;
     declare updatedAt: CreationOptional<Date>;
 
