@@ -1,16 +1,15 @@
-import {
-    Model,
-    DataTypes,
+import { Model, DataTypes } from "sequelize";
+import type {
     InferAttributes,
     InferCreationAttributes,
     CreationOptional,
     NonAttribute,
 } from "sequelize";
-import { sequelize } from "./database";
-import { Role } from "../types";
+import { sequelize } from "./database.ts";
+import { Role } from "../types.ts";
 // Circular: User imports Post and Comment to define its associations
-import { Post } from "./Post";
-import { Comment } from "./Comment";
+import { Post } from "./Post.ts";
+import { Comment } from "./Comment.ts";
 
 export class User extends Model<
     InferAttributes<User>,
