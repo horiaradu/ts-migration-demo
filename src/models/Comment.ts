@@ -7,9 +7,8 @@ import type {
     NonAttribute,
 } from "sequelize";
 import { sequelize } from "./database.ts";
-// Circular: Comment imports User and Post
-import { User } from "./User.ts";
-import { Post } from "./Post.ts";
+import type { User } from "./User.ts";
+import type { Post } from "./Post.ts";
 
 export class Comment extends Model<
     InferAttributes<Comment>,
@@ -38,6 +37,3 @@ Comment.init(
     },
     { sequelize, modelName: "Comment" }
 );
-
-User.hasMany(Comment, { foreignKey: "userId", as: "comments" });
-Comment.belongsTo(User, { foreignKey: "userId", as: "author" });
