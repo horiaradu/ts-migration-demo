@@ -9,4 +9,4 @@ const config = {
     appName: "ts-migration-demo",
 };
 
-module.exports = config;
+export default config;

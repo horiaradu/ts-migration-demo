@@ -32,4 +32,4 @@ function compact(obj) {
     );
 }
 
-module.exports = { paginate, formatDate, compact };
+export { paginate, formatDate, compact };

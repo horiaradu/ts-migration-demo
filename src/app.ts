@@ -1,5 +1,5 @@
 import express from "express";
-const { logger } = require("./middleware/logger.js");
+import { logger } from "./middleware/logger.js";
 import userRoutes from "./routes/userRoutes.ts";
 import postRoutes from "./routes/postRoutes.ts";
 

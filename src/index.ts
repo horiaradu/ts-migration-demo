@@ -6,7 +6,7 @@ process.env.DB_PATH = ":memory:";
 import { sequelize } from "./models/index.ts";
 import { createApp } from "./app.ts";
 
-const config = require("./config.js");
+import config from "./config.js";
 
 async function main() {
     await sequelize.sync({ force: false });
