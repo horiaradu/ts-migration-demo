@@ -8,9 +8,8 @@ import type {
 } from "sequelize";
 import { sequelize } from "./database.ts";
 import { PostStatus } from "../types.ts";
-// Circular: Post imports User (to define belongsTo) and Comment (to define hasMany)
-import { User } from "./User.ts";
-import { Comment } from "./Comment.ts";
+import type { User } from "./User.ts";
+import type { Comment } from "./Comment.ts";
 
 export class Post extends Model<
     InferAttributes<Post>,
@@ -46,7 +45,4 @@ Post.init(
     { sequelize, modelName: "Post" }
 );
 
-// Associations defined here — circular:
-// Post.ts → Comment.ts → Post.ts
-Post.hasMany(Comment, { foreignKey: "postId", as: "comments" });
-Comment.belongsTo(Post, { foreignKey: "postId", as: "post" });
+

@@ -7,9 +7,8 @@ import type {
 } from "sequelize";
 import { sequelize } from "./database.ts";
 import { Role } from "../types.ts";
-// Circular: User imports Post and Comment to define its associations
-import { Post } from "./Post.ts";
-import { Comment } from "./Comment.ts";
+import type { Post } from "./Post.ts";
+import type { Comment } from "./Comment.ts";
 
 export class User extends Model<
     InferAttributes<User>,
@@ -43,10 +42,4 @@ User.init(
     { sequelize, modelName: "User" }
 );
 
-// Associations defined here — creates circular dependency:
-// User.ts → Post.ts → User.ts
-User.hasMany(Post, { foreignKey: "userId", as: "posts" });
-Post.belongsTo(User, { foreignKey: "userId", as: "author" });
 
-User.hasMany(Comment, { foreignKey: "userId", as: "comments" });
-Comment.belongsTo(User, { foreignKey: "userId", as: "author" });
