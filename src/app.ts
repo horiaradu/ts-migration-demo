@@ -1,7 +1,7 @@
 import express from "express";
-const { logger } = require("./middleware/logger");
-import userRoutes from "./routes/userRoutes";
-import postRoutes from "./routes/postRoutes";
+const { logger } = require("./middleware/logger.js");
+import userRoutes from "./routes/userRoutes.ts";
+import postRoutes from "./routes/postRoutes.ts";
 
 export function createApp() {
     const app = express();

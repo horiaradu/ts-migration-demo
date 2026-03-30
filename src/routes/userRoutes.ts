@@ -1,7 +1,7 @@
 import { Router, Request, Response } from "express";
-import { User } from "../models";
-import { Role } from "../types";
-const { compact } = require("../utils");
+import { User } from "../models/index.ts";
+import { Role } from "../types.ts";
+const { compact } = require("../utils.js");
 
 const router = Router();
 

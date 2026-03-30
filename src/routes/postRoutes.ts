@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
-import { Post, User, Comment } from "../models";
-import { PostStatus } from "../types";
+import { Post, User, Comment } from "../models/index.ts";
+import { PostStatus } from "../types.ts";
 
 const router = Router();
 

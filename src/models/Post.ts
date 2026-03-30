@@ -7,11 +7,11 @@ import {
     ForeignKey,
     NonAttribute,
 } from "sequelize";
-import { sequelize } from "./database";
-import { PostStatus } from "../types";
+import { sequelize } from "./database.ts";
+import { PostStatus } from "../types.ts";
 // Circular: Post imports User (to define belongsTo) and Comment (to define hasMany)
-import { User } from "./User";
-import { Comment } from "./Comment";
+import { User } from "./User.ts";
+import { Comment } from "./Comment.ts";
 
 export class Post extends Model<
     InferAttributes<Post>,

@@ -3,10 +3,10 @@
 // before it's set, and falls back to ":memory:".
 process.env.DB_PATH = ":memory:";
 
-import { sequelize } from "./models";
-import { createApp } from "./app";
+import { sequelize } from "./models/index.ts";
+import { createApp } from "./app.ts";
 
-const config = require("./config");
+const config = require("./config.js");
 
 async function main() {
     await sequelize.sync({ force: false });
