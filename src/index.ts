@@ -1,6 +1,6 @@
-import { sequelize } from "./models";
-import { createApp } from "./app";
-const config = require("./config");
+import { sequelize } from "./models/index.ts";
+import { createApp } from "./app.ts";
+const config = require("./config.js");
 
 async function main() {
     await sequelize.sync({ force: false });
