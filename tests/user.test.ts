@@ -1,5 +1,5 @@
-import { sequelize, User } from "../src/models";
-import { Role } from "../src/types";
+import { sequelize, User } from "../src/models/index.ts";
+import { Role } from "../src/types.ts";
 
 beforeAll(async () => {
     await sequelize.sync({ force: true });

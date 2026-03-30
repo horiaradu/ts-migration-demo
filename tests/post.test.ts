@@ -1,7 +1,7 @@
 import request from "supertest";
-import { sequelize, User, Post, Comment } from "../src/models";
-import { createApp } from "../src/app";
-import { Role, PostStatus } from "../src/types";
+import { sequelize, User, Post, Comment } from "../src/models/index.ts";
+import { createApp } from "../src/app.ts";
+import { Role, PostStatus } from "../src/types.ts";
 
 const app = createApp();
 
