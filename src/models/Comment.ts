@@ -1,6 +1,5 @@
-import {
-    Model,
-    DataTypes,
+import { Model, DataTypes } from "sequelize";
+import type {
     InferAttributes,
     InferCreationAttributes,
     CreationOptional,
