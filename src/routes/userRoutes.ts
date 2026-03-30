@@ -2,7 +2,6 @@ import { Router } from "express";
 import type { Request, Response } from "express";
 import { User } from "../models/index.ts";
 import { Role } from "../types.ts";
-import { compact } from "../utils.js";
 
 const router = Router();
 
@@ -26,7 +25,7 @@ router.post("/", async (req: Request, res: Response) => {
         email: string;
         role?: Role;
     };
-    const user = await User.create(compact({ name, email, role }));
+    const user = await User.create({ name, email, role });
     res.status(201).json(user);
 });
 
