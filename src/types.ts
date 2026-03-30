@@ -1,15 +1,18 @@
-// TypeScript enums — these will be a problem for Node's type stripping later.
-// Node's built-in type stripping does not support enums because they generate
-// runtime JavaScript code (not just type annotations).
+// 'as const' objects instead of enums — Node's type stripping cannot handle
+// enums because they generate runtime JavaScript code (an IIFE that builds
+// an object). 'as const' is purely a type-level construct: Node strips it
+// and nothing remains at runtime.
 
-export enum Role {
-    Admin = "admin",
-    User = "user",
-    Moderator = "moderator",
-}
+export const Role = {
+    Admin: "admin",
+    User: "user",
+    Moderator: "moderator",
+} as const;
+export type Role = (typeof Role)[keyof typeof Role];
 
-export enum PostStatus {
-    Draft = "draft",
-    Published = "published",
-    Archived = "archived",
-}
+export const PostStatus = {
+    Draft: "draft",
+    Published: "published",
+    Archived: "archived",
+} as const;
+export type PostStatus = (typeof PostStatus)[keyof typeof PostStatus];
