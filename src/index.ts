@@ -1,8 +1,6 @@
-// In CJS, this runs before the require() calls that imports compile to.
-// In ESM, imports are hoisted above this — so config.js reads DB_PATH
-// before it's set, and falls back to ":memory:".
-process.env.DB_PATH = ":memory:";
-
+// Fix: env vars moved to setup.ts, imported first so ESM evaluates it
+// before any module reads process.env.
+import "./setup.ts";
 import { sequelize } from "./models/index.ts";
 import { createApp } from "./app.ts";
 
